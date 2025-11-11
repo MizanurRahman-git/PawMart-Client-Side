@@ -1,0 +1,64 @@
+import React, { useEffect, useState } from "react";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+import LatestProducts from "../Components/LatestProducts";
+
+const PetsSupplies = () => {
+  const [searchProducts, setSearchProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://pawmart-store-server.vercel.app/allproducts")
+      .then((res) => res.json())
+      .then((data) => {
+        setSearchProducts(data);
+      });
+  }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    const searchText = e.target.search?.value;
+
+    fetch(`https://pawmart-store-server.vercel.app/search?search=${searchText}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setSearchProducts(data);
+      });
+  };
+
+  return (
+    <div>
+      <title>PawMart-All-Products</title>
+      <div className="w-11/12 mx-auto">
+        <header>
+          <Navbar />
+        </header>
+        <main>
+          <form onSubmit={handleSearch} className="text-end mt-5">
+            <div className="join">
+              <div>
+                <label className="input validator join-item">
+                  <input type="text" name="search" placeholder="🔍 Search" />
+                </label>
+                <div className="validator-hint hidden">
+                  Enter valid Product Name
+                </div>
+              </div>
+              <button className="btn btn-neutral join-item">Search</button>
+            </div>
+          </form>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
+            {searchProducts.map((product) => (
+              <LatestProducts key={product._id} product={product} />
+            ))}
+          </div>
+        </main>
+      </div>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
+  );
+};
+
+export default PetsSupplies;
