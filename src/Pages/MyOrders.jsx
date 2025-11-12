@@ -4,7 +4,9 @@ import Footer from "../Components/Footer";
 import useAuth from "../Hooks/UseAuth";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
-
+import jsPDF from "jspdf";
+import { autoTable } from "jspdf-autotable";
+import { Link } from "react-router";
 
 const MyOrders = () => {
   const { users } = useAuth();
@@ -50,6 +52,47 @@ const MyOrders = () => {
     });
   };
 
+  const handleDownload = () => {
+    const doc = new jsPDF();
+    doc.text("My Orders List", 14, 15);
+    const tableColumn = [
+      "SL. No",
+      "Product",
+      "Buyer Name",
+      "Price",
+      "Quantity",
+      "Address",
+      "Date",
+      "Phone",
+    ];
+
+    const tableRows = [];
+
+    orders.map((order, index) => {
+      const rowData = [
+        index + 1,
+        order.productName,
+        order.buyerName,
+        order.price,
+        order.quantity,
+        order.address,
+        order.date,
+        order.phone,
+      ];
+      tableRows.push(rowData);
+    });
+
+    autoTable(doc, {
+      head: [tableColumn],
+      body: tableRows,
+      startY: 25,
+      theme: "grid",
+      styles: { fontSize: 10 },
+      headStyles: { fillColor: [41, 128, 185] },
+    });
+
+    doc.save("my_orders.pdf");
+  };
 
   return (
     <div>
@@ -108,11 +151,40 @@ const MyOrders = () => {
             </div>
           </div>
           <div className="flex justify-center mt-6">
-            <button
-              className="px-7 py-1.5 rounded-lg border "
-            >
-              Download PDF
-            </button>
+            {orders.length > 0 ? (
+              <button
+                onClick={handleDownload}
+                className="px-7 py-1.5 rounded-lg border "
+              >
+                Download PDF
+              </button>
+            ) : (
+              <Link to="/petsSupplies">
+                <button
+                  class="bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
+                  type="button"
+                >
+                  <div class="bg-green-400 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-1 group-hover:w-[184px] z-10 duration-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 1024 1024"
+                      height="25px"
+                      width="25px"
+                    >
+                      <path
+                        d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                        fill="#000000"
+                      ></path>
+                      <path
+                        d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                        fill="#000000"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p class="translate-x-2">Order Now</p>
+                </button>
+              </Link>
+            )}
           </div>
         </main>
       </div>
