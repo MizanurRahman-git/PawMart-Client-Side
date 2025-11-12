@@ -56,11 +56,11 @@ const AddListing = () => {
           <div className="flex justify-center min-h-screen items-center">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
               <div className="card-body">
-                <h1 className="font-medium text-center text-3xl">
+                <h1 className="font-medium text-center text-3xl border-b-2 pb-3.5">
                   Add New Product
                 </h1>
                 <form onSubmit={handleAddList}>
-                  <fieldset className="fieldset">
+                  <fieldset className="fieldset mt-3.5">
                     {/* product name */}
                     <label className="label">Product/Pet Name</label>
                     <input
@@ -68,15 +68,17 @@ const AddListing = () => {
                       className="input"
                       name="name"
                       placeholder="Name"
+                      required
                     />
                     {/* Category */}
                     <label className="label">Category</label>
                     <select
                       defaultValue="Pick a Product"
                       name="category"
+                      required
                       className="select"
                     >
-                      <option disabled={true}>Pick a Product</option>
+                      <option required disabled={true}>Pick a Product</option>
                       <option>Pets</option>
                       <option>Pet Food</option>
                       <option>Accessories</option>
@@ -87,6 +89,7 @@ const AddListing = () => {
                     <input
                       type="text"
                       className="input"
+                      required
                       name="price"
                       placeholder="price"
                     />
@@ -95,6 +98,7 @@ const AddListing = () => {
                     <input
                       type="text"
                       className="input"
+                      required
                       name="location"
                       placeholder="Location"
                     />
@@ -102,6 +106,7 @@ const AddListing = () => {
                     <label className="label">Description</label>
                     <textarea
                       className="textarea"
+                      required
                       name="description"
                       placeholder="Product Bio"
                     ></textarea>
@@ -110,6 +115,7 @@ const AddListing = () => {
                     <input
                       type="text"
                       name="photo"
+                      required
                       className="input"
                       placeholder="URL"
                     />
@@ -133,7 +139,7 @@ const AddListing = () => {
                       className="input"
                       placeholder="email"
                     />
-                    <button className="btn btn-neutral mt-4">
+                    <button className="bg-blue-800 py-2 text-lg font-semibold rounded-md cursor-pointer mt-4">
                       Add Product
                     </button>
                   </fieldset>

@@ -5,20 +5,17 @@ import useAuth from "../Hooks/UseAuth";
 import { Bounce, toast } from "react-toastify";
 const Navbar = () => {
   const { users, logOut } = useAuth();
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light")
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-  useEffect(()=>{
-    const html = document.querySelector('html')
-    html.setAttribute("data-theme", theme)
-    localStorage.setItem('theme', theme)
-  },[theme])
-
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const handleTheme = (checked) => {
-   setTheme(checked ? "dark" : "light")
-  }
-
-
+    setTheme(checked ? "dark" : "light");
+  };
 
   const handleLogOut = () => {
     logOut()
@@ -40,23 +37,47 @@ const Navbar = () => {
       });
   };
 
-
   const links = (
     <>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/petsSupplies">Pets & Supplies</NavLink>
+      <NavLink
+        className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+        to="/petsSupplies"
+      >
+        Pets & Supplies
+      </NavLink>
       {users && (
         <>
-          <NavLink to="/addListing">Add Listing</NavLink>
-          <NavLink to="/myListings">My Listings</NavLink>
-          <NavLink to="/myOrders">My Orders</NavLink>
+          <NavLink
+            className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+            to="/addListing"
+          >
+            Add Listing
+          </NavLink>
+          <NavLink
+            className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+            to="/myListings"
+          >
+            My Listings
+          </NavLink>
+          <NavLink
+            className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+            to="/myOrders"
+          >
+            My Orders
+          </NavLink>
         </>
       )}
     </>
   );
 
   return (
-    <div className="navbar bg-base-100 border-b">
+    <div className="navbar bg-base-100 shadow-md rounded-2xl mt-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -83,12 +104,17 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to='/' className="flex items-center font-medium cursor-pointer text-xl">
+        <Link
+          to="/"
+          className="flex items-center font-medium cursor-pointer text-xl"
+        >
           <img className="w-14 rounded-full" src={logo} alt="" /> PawMart
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal gap-5 xl:gap-10 text-xl px-1">{links}</ul>
+        <ul className="menu menu-horizontal gap-5 xl:gap-10 text-xl px-1">
+          {links}
+        </ul>
       </div>
       <div className="navbar-end gap-5">
         {users ? (
@@ -114,7 +140,10 @@ const Navbar = () => {
                 <p>Theme</p>
               </li>
               <label className="toggle text-base-content">
-                <input onChange={(e)=>handleTheme(e.target.checked)} type="checkbox" />
+                <input
+                  onChange={(e) => handleTheme(e.target.checked)}
+                  type="checkbox"
+                />
                 <svg
                   aria-label="enabled"
                   xmlns="http://www.w3.org/2000/svg"
@@ -148,8 +177,18 @@ const Navbar = () => {
           </div>
         ) : (
           <>
-            <NavLink to="/logIn">Log In</NavLink>
-            <NavLink to="/register">Register</NavLink>
+            <NavLink
+              className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+              to="/logIn"
+            >
+              Log In
+            </NavLink>
+            <NavLink
+              className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+              to="/register"
+            >
+              Register
+            </NavLink>
           </>
         )}
       </div>

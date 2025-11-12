@@ -8,7 +8,7 @@ import { Link } from "react-router";
 const LatestProducts = ({ product }) => {
   const {_id, productName, productImage, price, location, category } = product;
   return (
-    <div className="card  bg-base-100 lg:w-80 xl:w-96 shadow-sm">
+    <div className="card border-2 border-blue-800 bg-base-100 lg:w-80 xl:w-96 shadow-sm">
       <figure className="p-1.5">
         <img
           src={productImage}
@@ -26,7 +26,7 @@ const LatestProducts = ({ product }) => {
           <p className="flex  font-semibold text-xl"> {price}<span><HiOutlineCurrencyBangladeshi /></span></p>
         </div>
         <div className="card-actions">
-          <Link to={`/productsDetails/${_id}`} className="btn btn-primary w-full flex justify-between text-xl">
+          <Link to={`/productsDetails/${_id}`} className="bg-blue-800 text-white px-4 py-2 w-full flex items-center justify-between text-xl">
             <span>See Details</span>{" "}
             <span>
               {" "}

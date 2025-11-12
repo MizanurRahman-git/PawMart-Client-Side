@@ -93,13 +93,13 @@ const ProductDetails = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-3">
             <div>
               <img
-                className="w-64 h-50 md:w-200 md:h-130  rounded-lg object-cover"
+                className=" sm:w-150 sm:h-100 md:w-200 md:h-130  rounded-lg object-cover"
                 src={productImage}
                 alt=""
               />
             </div>
             <div className="space-y-1 ">
-              <h1 className="text-2xl md:text-5xl font-semibold flex gap-1.5">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold flex gap-1.5">
                 <span>
                   <MdDriveFileRenameOutline />
                 </span>
@@ -111,7 +111,7 @@ const ProductDetails = () => {
                   <TbCurrencyTaka />
                 </span>
               </h1>
-              <div className="border w-60 md:w-150 lg:w-100 flex flex-col justify-center mt-10 p-3 rounded-lg">
+              <div className="border sm:w-120 md:w-150 lg:w-100 flex flex-col justify-center mt-10 p-3 rounded-lg">
                 <p className="flex gap-1 items-center underline text-lg p-2">
                   <span>
                     <BiSolidCategoryAlt />
@@ -146,7 +146,7 @@ const ProductDetails = () => {
 
                 <button
                   onClick={handleModal}
-                  className="bg-blue-500 py-2 w-full rounded-lg"
+                  className="bg-blue-800 py-2 w-full text-lg font-semibold cursor-pointer rounded-lg"
                 >
                   Order Now
                 </button>
@@ -156,7 +156,7 @@ const ProductDetails = () => {
           {/* Modal */}
           <dialog ref={modalRef} className="modal modal-bottom sm:modal-middle">
             <div className="modal-box">
-              <h3 className="font-bold text-lg text-center">
+              <h3 className="font-bold text-lg text-center border-b-2 pb-3">
                 Conformation Details
               </h3>
               <p className="py-4 text-center">
@@ -209,6 +209,7 @@ const ProductDetails = () => {
                   <input
                     type="number"
                     className="input"
+                    required
                     name="quantity"
                     placeholder="0"
                   />
@@ -249,14 +250,15 @@ const ProductDetails = () => {
                     type="text"
                     className="input"
                     name="phone"
+                    required
                     placeholder="Number"
                   />
-                  <button className="btn btn-neutral mt-4">Confirm</button>
+                  <button className="btn btn-neutral text-lg font-semibold mt-4">Confirm</button>
                 </fieldset>
               </form>
               <div className="modal-action w-full">
                 <form className="w-full" method="dialog">
-                  <button className="btn w-full bg-red-400">Close</button>
+                  <button className="btn w-full bg-red-500 text-lg">Close</button>
                 </form>
               </div>
             </div>
