@@ -3,23 +3,30 @@ import { useNavigate, useParams } from "react-router";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Swal from "sweetalert2";
+import useAuth from "../Hooks/UseAuth";
 
 const Update = () => {
   const {id} = useParams()
+  const {users} = useAuth()
   const [product, setProduct] = useState({})
   const navigate = useNavigate();
 
 
   useEffect(()=>{
-      fetch(`https://pawmart-store-server.vercel.app/products/${id}`)
+      fetch(`https://pawmart-store-server.vercel.app/products/${id}`, {
+        headers: {
+          authorization: `Bearer ${users.accessToken}`
+        }
+      })
       .then(res=> res.json())
       .then(data=> {
         setProduct(data)
       })
-    },[id])
+    },[id, users])
 
   const { productName, productImage, price, description, category, _id } =
     product;
+
 
   const handleUpdateData = (e) => {
     e.preventDefault();
@@ -35,7 +42,7 @@ const Update = () => {
     fetch(`https://pawmart-store-server.vercel.app/products/${_id}`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify(formData),
     })
