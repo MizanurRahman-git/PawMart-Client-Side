@@ -1,12 +1,22 @@
-import React from "react";
-import { useLoaderData, useNavigate } from "react-router";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Swal from "sweetalert2";
 
 const Update = () => {
-  const product = useLoaderData();
+  const {id} = useParams()
+  const [product, setProduct] = useState({})
   const navigate = useNavigate();
+
+
+  useEffect(()=>{
+      fetch(`https://pawmart-store-server.vercel.app/products/${id}`)
+      .then(res=> res.json())
+      .then(data=> {
+        setProduct(data)
+      })
+    },[id])
 
   const { productName, productImage, price, description, category, _id } =
     product;
@@ -37,7 +47,7 @@ const Update = () => {
             icon: "success",
             draggable: true,
           });
-          navigate("/");
+          navigate("/myListings");
         }
       })
       .catch((err) => {
@@ -79,9 +89,9 @@ const Update = () => {
                     >
                       <option disabled={true}>Pick a Product</option>
                       <option>Pets</option>
-                      <option>Food</option>
+                      <option>Pet Food</option>
                       <option>Accessories</option>
-                      <option>Care Products</option>
+                      <option>Pet Care Product</option>
                     </select>
                     {/* price */}
                     <label className="label">Price</label>

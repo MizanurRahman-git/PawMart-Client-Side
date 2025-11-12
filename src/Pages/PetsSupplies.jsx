@@ -26,6 +26,22 @@ const PetsSupplies = () => {
       });
   };
 
+  const handleCategory = (cate) => {
+    fetch(`https://pawmart-store-server.vercel.app/category/${cate}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setSearchProducts(data);
+      });
+  };
+
+  const handleAllProducts = () => {
+    fetch("https://pawmart-store-server.vercel.app/allproducts")
+      .then((res) => res.json())
+      .then((data) => {
+        setSearchProducts(data);
+      });
+  };
+
   return (
     <div>
       <title>PawMart-All-Products</title>
@@ -34,19 +50,59 @@ const PetsSupplies = () => {
           <Navbar />
         </header>
         <main>
-          <form onSubmit={handleSearch} className="text-end mt-5">
-            <div className="join">
-              <div>
-                <label className="input validator join-item">
-                  <input type="text" name="search" placeholder="🔍 Search" />
-                </label>
-                <div className="validator-hint hidden">
-                  Enter valid Product Name
-                </div>
-              </div>
-              <button className="btn btn-neutral join-item">Search</button>
+          <div className="mt-7 flex justify-between items-center">
+            <div className="space-x-1">
+              <button
+                className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
+                onClick={handleAllProducts}
+              >
+                All Products
+              </button>
+              <button
+                className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
+                onClick={() => handleCategory("Pets")}
+              >
+                Pets
+              </button>
+              <button
+                className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
+                onClick={() => handleCategory("Pet Food")}
+              >
+                Pet Food
+              </button>
+              <button
+                className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
+                onClick={() => handleCategory("Accessories")}
+              >
+                Accessories
+              </button>
+              <button
+                className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
+                onClick={() => handleCategory("Pet Care Products")}
+              >
+                Pet Care Product
+              </button>
             </div>
-          </form>
+            <div>
+              <form onSubmit={handleSearch} className="text-end mt-5">
+                <div className="join">
+                  <div>
+                    <label className="input validator join-item">
+                      <input
+                        type="text"
+                        name="search"
+                        placeholder="🔍 Search"
+                      />
+                    </label>
+                    <div className="validator-hint hidden">
+                      Enter valid Product Name
+                    </div>
+                  </div>
+                  <button className="btn btn-neutral join-item">Search</button>
+                </div>
+              </form>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
             {searchProducts.map((product) => (
               <LatestProducts key={product._id} product={product} />

@@ -65,10 +65,7 @@ const router = createBrowserRouter([
       <PrivetRouter>
         <ProductDetails />
       </PrivetRouter>
-    ),
-    loader: ({ params }) =>
-      fetch(`https://pawmart-store-server.vercel.app/products/${params.id}`),
-    hydrateFallbackElement: <h1> Loading.....</h1>,
+    )
   },
   {
     path: "/productUpdate/:id",
@@ -76,10 +73,7 @@ const router = createBrowserRouter([
       <PrivetRouter>
         <Update />
       </PrivetRouter>
-    ),
-    loader: ({ params }) =>
-      fetch(`https://pawmart-store-server.vercel.app/products/${params.id}`),
-    hydrateFallbackElement: <h1> Loading.....</h1>,
+    )
   },
   {
     path: "*",

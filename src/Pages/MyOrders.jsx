@@ -5,9 +5,11 @@ import useAuth from "../Hooks/UseAuth";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 
+
 const MyOrders = () => {
   const { users } = useAuth();
   const [orders, setOrders] = useState([]);
+  const printRef = React.useRef(null);
 
   useEffect(() => {
     fetch(
@@ -48,6 +50,7 @@ const MyOrders = () => {
     });
   };
 
+
   return (
     <div>
       <title>My-Orders</title>
@@ -56,7 +59,7 @@ const MyOrders = () => {
           <Navbar />
         </header>
         <main className="min-h-screen mt-10">
-          <div>
+          <div ref={printRef}>
             <div className="flex justify-center underline">
               <h1 className="text-4xl font-bold bg-linear-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
                 Total Order: {orders.length}
@@ -103,6 +106,13 @@ const MyOrders = () => {
                 </tbody>
               </table>
             </div>
+          </div>
+          <div className="flex justify-center mt-6">
+            <button
+              className="px-7 py-1.5 rounded-lg border "
+            >
+              Download PDF
+            </button>
           </div>
         </main>
       </div>

@@ -78,9 +78,9 @@ const AddListing = () => {
                     >
                       <option disabled={true}>Pick a Product</option>
                       <option>Pets</option>
-                      <option>Food</option>
+                      <option>Pet Food</option>
                       <option>Accessories</option>
-                      <option>Care Products</option>
+                      <option>Pet Care Products</option>
                     </select>
                     {/* price */}
                     <label className="label">Price</label>

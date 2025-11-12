@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { MdDriveFileRenameOutline } from "react-icons/md";
@@ -8,15 +8,28 @@ import { MdDescription } from "react-icons/md";
 import { SiMinutemailer } from "react-icons/si";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsCalendarDateFill } from "react-icons/bs";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useAuth from "../Hooks/UseAuth";
 import Swal from "sweetalert2";
 
 const ProductDetails = () => {
+  const { id } = useParams();
   const { users } = useAuth();
-  const product = useLoaderData();
+  const [product, setProduct] = useState({});
   const modalRef = useRef(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(`https://pawmart-store-server.vercel.app/products/${id}`, {
+      headers: {
+        authorization: `Bearer ${users.accessToken}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+      });
+  }, [id, users]);
 
   const {
     productName,
