@@ -154,17 +154,17 @@ const MyOrders = () => {
             {orders.length > 0 ? (
               <button
                 onClick={handleDownload}
-                className="px-7 py-1.5 rounded-lg border "
+                className="px-7 py-1.5 rounded-lg cursor-pointer text-lg bg-black text-white hover:bg-[#59AC77] "
               >
                 Download PDF
               </button>
             ) : (
               <Link to="/petsSupplies">
                 <button
-                  class="bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
+                  className="bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
                   type="button"
                 >
-                  <div class="bg-green-400 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-1 group-hover:w-[184px] z-10 duration-500">
+                  <div className="bg-green-400 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-1 group-hover:w-[184px] z-10 duration-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 1024 1024"
@@ -181,7 +181,7 @@ const MyOrders = () => {
                       ></path>
                     </svg>
                   </div>
-                  <p class="translate-x-2">Order Now</p>
+                  <p className="translate-x-2">Order Now</p>
                 </button>
               </Link>
             )}
