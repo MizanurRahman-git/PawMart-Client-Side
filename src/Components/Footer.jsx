@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="footer footer-horizontal footer-center bg-primary text-primary-content p-10">
       <aside>
-        <div className="flex items-center gap-5">
+        <div className="flex flex-col sm:flex-row items-center gap-5">
             <img className="w-18 rounded-full" src={logo} alt="" />
             <h1 className="font-semibold text-xl">PawMart Industries Ltd.</h1>
         </div>
