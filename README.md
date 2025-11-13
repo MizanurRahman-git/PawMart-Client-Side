@@ -1,16 +1,24 @@
-# React + Vite
+PROJECT NAME: PawMart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+DESCRIPTION: Pawmart is a community-driven platform where pet lovers, breeders, and pet shops come together to connect, buy, sell, and adopt. Our mission is to make pet adoption and pet product shopping simple, trustworthy, and joyful.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Whether you’re looking to find your next furry friend, list pets for adoption, or sell pet-related products like food, toys, and accessories, Pawmart makes it all possible in one secure, easy-to-use platform.
+  
 
-## React Compiler
+WEBSITE LINK: https://pawmart-store-side.firebaseapp.com
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+FEATURES OF PawMart: 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+** Pet Listing for Adoption & Sale
+** Community-Driven Platform 
+** Easy Odering System
+** Smart Search 
+** Secure & Verified 
+** User-Friendly Dashboard
+
+
+We believe in creating a caring and transparent space for all pet enthusiasts, helping animals find loving homes, and helping pet businesses grow.
+
+Explore, connect, and bring happiness home with Pawmart.
