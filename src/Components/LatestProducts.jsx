@@ -8,7 +8,7 @@ import { Link } from "react-router";
 const LatestProducts = ({ product }) => {
   const {_id, productName, productImage, price, location, category } = product;
   return (
-    <div className="card border-2 border-blue-800 bg-base-100 lg:w-80 xl:w-96 shadow-sm">
+    <div className="card border-2 border-blue-800 bg-base-100 h-fit shadow-sm">
       <figure className="p-1.5">
         <img
           src={productImage}

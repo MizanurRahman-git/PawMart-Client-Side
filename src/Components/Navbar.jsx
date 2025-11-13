@@ -40,13 +40,13 @@ const Navbar = () => {
   const links = (
     <>
       <NavLink
-        className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+        className=" p-1 text-lg font-semibold rounded-md"
         to="/"
       >
         Home
       </NavLink>
       <NavLink
-        className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+        className=" p-1 text-lg font-semibold rounded-md"
         to="/petsSupplies"
       >
         Pets & Supplies
@@ -54,19 +54,19 @@ const Navbar = () => {
       {users && (
         <>
           <NavLink
-            className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+            className=" p-1 text-lg font-semibold rounded-md"
             to="/addListing"
           >
             Add Listing
           </NavLink>
           <NavLink
-            className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+            className=" p-1 text-lg font-semibold rounded-md"
             to="/myListings"
           >
             My Listings
           </NavLink>
           <NavLink
-            className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+            className=" p-1 text-lg font-semibold rounded-md"
             to="/myOrders"
           >
             My Orders
@@ -112,7 +112,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal gap-5 xl:gap-10 text-xl px-1">
+        <ul className="menu menu-horizontal gap-5 px-1">
           {links}
         </ul>
       </div>
