@@ -106,9 +106,9 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="flex items-center font-medium cursor-pointer text-xl"
+          className="flex items-center  font-medium cursor-pointer text-xl"
         >
-          <img className="w-14 rounded-full" src={logo} alt="" /> PawMart
+          <img className="w-14 rounded-full" src={logo} alt="" /><span className="hidden sm:block"> PawMart</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -178,13 +178,13 @@ const Navbar = () => {
         ) : (
           <>
             <NavLink
-              className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+              className="px-1 sm:px-0 sm:p-1 sm:text-lg font-semibold rounded-md"
               to="/logIn"
             >
               Log In
             </NavLink>
             <NavLink
-              className=" px-5 py-1.5 text-lg font-semibold rounded-md"
+              className=" sm:p-1 sm:text-lg font-semibold rounded-md"
               to="/register"
             >
               Register
