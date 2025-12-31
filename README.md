@@ -1,24 +1,35 @@
-PROJECT NAME: PawMart
+PawMart – Community-Driven Pet Platform
 
+Website: https://pawmart-store-side.firebaseapp.com
+<h2>Description:</h2>
+PawMart is a community-driven platform that connects pet lovers, breeders, and pet shops. It allows users to find pets for adoption, list pets for sale, and buy pet-related products such as food, toys, and accessories—all in one secure and easy-to-use platform.
 
-DESCRIPTION: Pawmart is a community-driven platform where pet lovers, breeders, and pet shops come together to connect, buy, sell, and adopt. Our mission is to make pet adoption and pet product shopping simple, trustworthy, and joyful.
+Our mission is to make pet adoption and pet product shopping simple, trustworthy, and joyful, creating a caring space for both animals and pet enthusiasts.
+<hr>
 
-Whether you’re looking to find your next furry friend, list pets for adoption, or sell pet-related products like food, toys, and accessories, Pawmart makes it all possible in one secure, easy-to-use platform.
-  
+<h2>Key Features:</h2>
+Pet Listing for Adoption & Sale: Easily browse or list pets available for adoption or sale.
 
-WEBSITE LINK: https://pawmart-store-side.firebaseapp.com
+Community-Driven Platform: Connect with fellow pet lovers, breeders, and pet shops.
 
+Easy Ordering System: Smooth checkout process for pet products.
 
-FEATURES OF PawMart: 
+Smart Search: Quickly find pets or products with advanced search functionality.
 
-** Pet Listing for Adoption & Sale
-** Community-Driven Platform 
-** Easy Odering System
-** Smart Search 
-** Secure & Verified 
-** User-Friendly Dashboard
+Secure & Verified: Authentication and verification ensure safe transactions.
 
+User-Friendly Dashboard: Manage pets, orders, and listings with ease.
+<hr>
 
-We believe in creating a caring and transparent space for all pet enthusiasts, helping animals find loving homes, and helping pet businesses grow.
+<h2>Tech Stack:</h2>
+Frontend: React, Tailwind CSS
 
-Explore, connect, and bring happiness home with Pawmart.
+Routing: React Router
+
+Backend & Database: MongoDB
+
+Hosting: Firebase Hosting
+
+<hr>
+
+PawMart aims to foster a transparent, caring, and joyful pet community, helping animals find loving homes while supporting pet businesses.
