@@ -7,18 +7,18 @@ import Slider from "../Components/Slider";
 const MainLayouts = () => {
   return (
     <div>
-      <div className="w-11/12 mx-auto">
+      <div>
         <header>
           <Navbar />
         </header>
-        <main>
+        <main className="w-11/12 mx-auto">
           <section className="mt-10">
             <Slider />
           </section>
           <Outlet />
         </main>
       </div>
-      <footer>
+      <footer className="mt-8">
         <Footer />
       </footer>
     </div>

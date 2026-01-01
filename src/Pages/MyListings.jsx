@@ -22,11 +22,11 @@ const MyListings = () => {
   return (
     <div>
       <title>My-List</title>
-      <div className="w-11/12 mx-auto">
+      <div>
         <header>
           <Navbar />
         </header>
-        <main className="min-h-screen">
+        <main className="min-h-screen w-11/12 mx-auto">
           {myList.length ? (
             <div>
               {myList.map((product) => (

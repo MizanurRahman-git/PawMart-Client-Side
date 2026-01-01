@@ -65,11 +65,11 @@ const Update = () => {
   return (
     <div>
       <title>Update</title>
-      <div className="w-11/12 mx-auto">
+      <div>
         <header>
           <Navbar />
         </header>
-        <main>
+        <main className="w-11/12 mx-auto">
           <div className="flex justify-center min-h-screen items-center">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
               <div className="card-body">

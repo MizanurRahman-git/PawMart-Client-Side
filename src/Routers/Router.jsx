@@ -11,6 +11,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import PrivetRouter from "./PrivetRouter";
 import ProductDetails from "../Pages/ProductDetails";
 import Update from "../Pages/Update";
+import About from "../Pages/About";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/petsSupplies",
     Component: PetsSupplies,
+  },
+  {
+    path: "/about",
+    Component: About,
   },
   {
     path: "/addListing",

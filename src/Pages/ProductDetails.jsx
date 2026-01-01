@@ -85,11 +85,11 @@ const ProductDetails = () => {
   return (
     <div>
       <title>{productName}</title>
-      <div className="w-11/12 mx-auto">
+      <div>
         <header>
           <Navbar />
         </header>
-        <main className="my-10  min-h-screen">
+        <main className="my-10  min-h-screen w-11/12 mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-3">
             <div>
               <img

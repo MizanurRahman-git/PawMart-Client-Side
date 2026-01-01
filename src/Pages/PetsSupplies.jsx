@@ -45,43 +45,55 @@ const PetsSupplies = () => {
   return (
     <div>
       <title>PawMart-All-Products</title>
-      <div className="w-11/12 mx-auto">
+      <div>
         <header>
           <Navbar />
         </header>
-        <main>
+        <main className="w-11/12 mx-auto">
           <div className="mt-7 flex justify-between items-center">
             <div className="space-x-1">
-              <button
-                className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
-                onClick={handleAllProducts}
-              >
-                All Products
-              </button>
-              <button
-                className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
-                onClick={() => handleCategory("Pets")}
-              >
-                Pets
-              </button>
-              <button
-                className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
-                onClick={() => handleCategory("Pet Food")}
-              >
-                Pet Food
-              </button>
-              <button
-                className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
-                onClick={() => handleCategory("Accessories")}
-              >
-                Accessories
-              </button>
-              <button
-                className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
-                onClick={() => handleCategory("Pet Care Products")}
-              >
-                Pet Care Product
-              </button>
+              <select defaultValue="Select Category" className="select w-40">
+                <option>
+                  <button
+                    className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
+                    onClick={handleAllProducts}
+                  >
+                    All Products
+                  </button>
+                </option>
+                <option>
+                  <button
+                    className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
+                    onClick={() => handleCategory("Pets")}
+                  >
+                    Pets
+                  </button>
+                </option>
+                <option>
+                  <button
+                    className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
+                    onClick={() => handleCategory("Pet Food")}
+                  >
+                    Pet Food
+                  </button>
+                </option>
+                <option>
+                  <button
+                    className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
+                    onClick={() => handleCategory("Accessories")}
+                  >
+                    Accessories
+                  </button>
+                </option>
+                <option>
+                  <button
+                    className="border px-5 py-2 bg-black text-white text-md font-semibold hover:bg-white hover:text-black rounded-md"
+                    onClick={() => handleCategory("Pet Care Products")}
+                  >
+                    Pet Care Product
+                  </button>
+                </option>
+              </select>
             </div>
             <div>
               <form onSubmit={handleSearch} className="text-end mt-5">
@@ -103,7 +115,7 @@ const PetsSupplies = () => {
               </form>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 my-10">
             {searchProducts.map((product) => (
               <LatestProducts key={product._id} product={product} />
             ))}

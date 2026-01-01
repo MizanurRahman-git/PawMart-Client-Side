@@ -48,11 +48,11 @@ const AddListing = () => {
   return (
     <div>
       <title>Add-Products</title>
-      <div className="w-11/12 mx-auto">
+      <div>
         <header>
           <Navbar />
         </header>
-        <main className="my-3">
+        <main className="my-3 w-11/12 mx-auto">
           <div className="flex justify-center min-h-screen items-center">
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
               <div className="card-body">

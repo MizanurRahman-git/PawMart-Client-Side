@@ -80,12 +80,12 @@ const LogIn = () => {
   };
 
   return (
-    <div className="w-11/12 mx-auto">
+    <div>
       <title>Log-In</title>
       <div>
         <header> <Navbar/> </header>
       </div>
-      <div className="flex justify-center min-h-screen items-center">
+      <div className="flex justify-center min-h-screen items-center w-11/12 mx-auto">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
             <h1 className="font-medium text-center text-3xl">

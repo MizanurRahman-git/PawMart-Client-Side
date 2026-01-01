@@ -3,6 +3,9 @@ import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import useAuth from "../Hooks/UseAuth";
 import { Bounce, toast } from "react-toastify";
+import { IoMdHome } from "react-icons/io";
+import { MdPets } from "react-icons/md";
+
 const Navbar = () => {
   const { users, logOut } = useAuth();
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -40,16 +43,24 @@ const Navbar = () => {
   const links = (
     <>
       <NavLink
-        className=" p-1 text-lg font-semibold rounded-md"
+        className=" p-1 text-lg font-semibold rounded-md flex items-center gap-0.5"
         to="/"
       >
+        <IoMdHome />
         Home
       </NavLink>
       <NavLink
-        className=" p-1 text-lg font-semibold rounded-md"
+        className=" p-1 text-lg font-semibold rounded-md flex items-center gap-0.5"
         to="/petsSupplies"
       >
+        <MdPets />
         Pets & Supplies
+      </NavLink>
+      <NavLink
+        className=" p-1 text-lg font-semibold rounded-md flex items-center gap-0.5"
+        to="/about"
+      >
+        About
       </NavLink>
       {users && (
         <>
@@ -77,7 +88,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-md rounded-2xl mt-5">
+    <div className="navbar px-3 md:px-10 lg:px-20 shadow-md">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -108,13 +119,12 @@ const Navbar = () => {
           to="/"
           className="flex items-center  font-medium cursor-pointer text-xl"
         >
-          <img className="w-14 rounded-full" src={logo} alt="" /><span className="hidden sm:block"> PawMart</span>
+          <img className="w-20 rounded-full" src={logo} alt="" />
+          <span className="hidden sm:block"> PawMart</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal gap-5 px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal gap-5 px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-5">
         {users ? (

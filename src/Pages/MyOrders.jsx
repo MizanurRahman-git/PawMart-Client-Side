@@ -97,11 +97,11 @@ const MyOrders = () => {
   return (
     <div>
       <title>My-Orders</title>
-      <div className="w-11/12 mx-auto">
+      <div>
         <header>
           <Navbar />
         </header>
-        <main className="min-h-screen mt-10">
+        <main className="min-h-screen mt-10 w-11/12 mx-auto">
           <div ref={printRef}>
             <div className="flex justify-center underline">
               <h1 className="text-4xl font-bold bg-linear-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
