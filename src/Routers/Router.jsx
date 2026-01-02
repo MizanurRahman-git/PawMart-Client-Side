@@ -33,6 +33,18 @@ const router = createBrowserRouter([
     Component: About,
   },
   {
+    path: "/logIn",
+    Component: LogIn,
+  },
+  {
+    path: "/register",
+    Component: Register,
+  },
+  {
+    path: "/productsDetails/:id",
+    element: <ProductDetails />,
+  },
+  {
     path: "/addListing",
     element: (
       <PrivetRouter>
@@ -49,36 +61,20 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/productUpdate/:id",
+    element: (
+      <PrivetRouter>
+        <Update />
+      </PrivetRouter>
+    ),
+  },
+  {
     path: "/myOrders",
     element: (
       <PrivetRouter>
         <MyOrders />
       </PrivetRouter>
     ),
-  },
-  {
-    path: "/logIn",
-    Component: LogIn,
-  },
-  {
-    path: "/register",
-    Component: Register,
-  },
-  {
-    path: "/productsDetails/:id",
-    element: (
-      <PrivetRouter>
-        <ProductDetails />
-      </PrivetRouter>
-    )
-  },
-  {
-    path: "/productUpdate/:id",
-    element: (
-      <PrivetRouter>
-        <Update />
-      </PrivetRouter>
-    )
   },
   {
     path: "*",

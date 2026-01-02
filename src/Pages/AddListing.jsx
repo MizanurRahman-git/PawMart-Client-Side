@@ -45,6 +45,48 @@ const AddListing = () => {
         console.log(err);
       });
   };
+
+  
+  const Textarea = (props) => (
+    <textarea
+      {...props}
+      required
+      className="w-full min-h-[140px] rounded-xl border border-slate-300 px-4 py-3 text-sm
+               focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+    />
+  );
+
+  const Select = ({ label, name }) => (
+    <div className="space-y-1.5">
+      <label className="text-sm font-medium text-slate-600">{label}</label>
+      <select
+        name={name}
+        required
+        className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm
+                 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+      >
+        <option value="">Select Category</option>
+        <option>Pets</option>
+        <option>Pet Food</option>
+        <option>Accessories</option>
+        <option>Pet Care Products</option>
+      </select>
+    </div>
+  );
+
+  const Input = ({ label, ...props }) => (
+    <div className="space-y-1.5">
+      <label className="text-sm font-medium text-slate-600">{label}</label>
+      <input
+        {...props}
+        required
+        className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm
+                 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500
+                 transition"
+      />
+    </div>
+  );
+
   return (
     <div>
       <title>Add-Products</title>
@@ -52,100 +94,78 @@ const AddListing = () => {
         <header>
           <Navbar />
         </header>
-        <main className="my-3 w-11/12 mx-auto">
-          <div className="flex justify-center min-h-screen items-center">
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-              <div className="card-body">
-                <h1 className="font-medium text-center text-3xl border-b-2 pb-3.5">
-                  Add New Product
-                </h1>
-                <form onSubmit={handleAddList}>
-                  <fieldset className="fieldset mt-3.5">
-                    {/* product name */}
-                    <label className="label">Product/Pet Name</label>
-                    <input
-                      type="text"
-                      className="input"
-                      name="name"
-                      placeholder="Name"
-                      required
-                    />
-                    {/* Category */}
-                    <label className="label">Category</label>
-                    <select
-                      defaultValue="Pick a Product"
-                      name="category"
-                      required
-                      className="select"
-                    >
-                      <option required disabled={true}>Pick a Product</option>
-                      <option>Pets</option>
-                      <option>Pet Food</option>
-                      <option>Accessories</option>
-                      <option>Pet Care Products</option>
-                    </select>
-                    {/* price */}
-                    <label className="label">Price</label>
-                    <input
-                      type="text"
-                      className="input"
-                      required
-                      name="price"
-                      placeholder="price"
-                    />
-                    {/* location */}
-                    <label className="label">Location</label>
-                    <input
-                      type="text"
-                      className="input"
-                      required
-                      name="location"
-                      placeholder="Location"
-                    />
-                    {/* Text area */}
-                    <label className="label">Description</label>
-                    <textarea
-                      className="textarea"
-                      required
-                      name="description"
-                      placeholder="Product Bio"
-                    ></textarea>
-                    {/* image URL */}
-                    <label className="label">Photo URL</label>
-                    <input
-                      type="text"
-                      name="photo"
-                      required
-                      className="input"
-                      placeholder="URL"
-                    />
-                    {/* date */}
-                    <label className="label">Date</label>
-                    <input
-                      type="text"
-                      readOnly
-                      defaultValue={new Date().toISOString().split("T")[0]}
-                      name="date"
-                      className="input"
-                      placeholder="Date"
-                    />
-                    {/* Email */}
-                    <label className="label">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      readOnly
-                      defaultValue={users?.email}
-                      className="input"
-                      placeholder="email"
-                    />
-                    <button className="bg-blue-800 py-2 text-lg font-semibold rounded-md cursor-pointer mt-4">
-                      Add Product
-                    </button>
-                  </fieldset>
-                </form>
-              </div>
+        <main className="min-h-screen flex items-center justify-center px-6">
+          <div className="w-full max-w-3xl border border-slate-200 rounded-3xl my-5 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)]">
+            {/* Header */}
+            <div className="px-10 pt-10 pb-6 border-b border-slate-200">
+              <h1 className="text-3xl font-semibold tracking-tight">
+                Add New Product
+              </h1>
+              <p className="text-slate-500 text-sm mt-1">
+                List your pet or product with accurate details
+              </p>
             </div>
+
+            <form onSubmit={handleAddList} className="px-10 py-8 space-y-8">
+              <section>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-4">
+                  Basic Information
+                </h3>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <Input
+                    label="Product / Pet Name"
+                    name="name"
+                    placeholder="British Shorthair"
+                  />
+                  <Select label="Category" name="category" />
+                  <Input label="Price" name="price" placeholder="৳ 8,000" />
+                  <Input
+                    label="Location"
+                    name="location"
+                    placeholder="Dhaka, Bangladesh"
+                  />
+                </div>
+              </section>
+
+              <section>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-4">
+                  Description
+                </h3>
+
+                <Textarea
+                  name="description"
+                  placeholder="Write something meaningful about the product or pet..."
+                />
+              </section>
+
+              <section>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400 mb-4">
+                  Media
+                </h3>
+
+                <Input
+                  label="Photo URL"
+                  name="photo"
+                  placeholder="https://example.com/image.jpg"
+                />
+              </section>
+
+              <section className="grid md:grid-cols-2 gap-6">
+                <Input
+                  label="Date"
+                  name="date"
+                  value={new Date().toISOString().split("T")[0]}
+                />
+                <Input label="Email" name="email" value={users?.email} />
+              </section>
+
+              <div className="pt-6 flex justify-end">
+                <button className="px-8 py-3 rounded-xl bg-linear-to-r from-indigo-600 to-violet-600 text-white font-semibold shadow-lg hover:scale-[1.02] active:scale-[0.98] transition">
+                  Publish Listing
+                </button>
+              </div>
+            </form>
           </div>
         </main>
       </div>

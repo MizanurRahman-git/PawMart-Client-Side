@@ -33,8 +33,12 @@ const AboutPage = () => {
           </p>
         </div>
       </section>
+
       <section className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-6 text-center">
+        <h2 className="mt-12 text-2xl font-semibold text-gray-800">Features</h2>
+        <div className="w-20 h-1 mt-2 bg-linear-to-r from-indigo-500 to-purple-500 rounded-full" />
+
+        <div className="grid md:grid-cols-4 gap-6 text-center mt-2.5">
           <FeatureCard
             icon={<FiShield className="text-4xl text-primary" />}
             title="Trusted Sellers"
@@ -63,32 +67,54 @@ const AboutPage = () => {
       </section>
       <section className="bg-base-200 py-16 animate-fadeUpSlow">
         <div className="max-w-5xl mx-auto px-6 space-y-6">
-          <h2 className="text-3xl font-bold text-center text-primary">
+          <h2 className="mt-12 text-2xl font-semibold text-gray-800">
             Our Story
           </h2>
-          <p className="text-lg text-center text-base-content/80">
+          <div className="w-20 h-1 mt-2 bg-linear-to-r from-indigo-500 to-purple-500 rounded-full" />
+          <p className="text-lg text-left text-base-content/80">
             PawMart began with a mission — make pet care easy, reliable &
             joyful.
           </p>
-          <p className="text-base-content/70 text-center">
-            Now we support thousands of families through safe listings, trusted
-            products, and transparent care.
+          <p className="text-base-content/70 text-left">
+            PawMart is a trusted, community-driven platform designed to simplify
+            and enhance the pet care experience. Built with a deep love for
+            animals, our mission is to make pet adoption, buying, and selling
+            safe, reliable, and joyful for everyone. We bring together pet
+            lovers, breeders, shelters, and pet shops under one secure and
+            easy-to-use platform. At PawMart, transparency and trust are at the
+            heart of everything we do. Every listing is carefully managed to
+            ensure safety, authenticity, and ethical care. From adopting a new
+            furry companion to purchasing high-quality pet food, toys, and
+            accessories, PawMart offers a seamless experience tailored to modern
+            pet families. We believe pets are more than companions—they are
+            family. That's why we focus on building meaningful connections,
+            promoting responsible pet ownership, and supporting long-term pet
+            well-being. Today, PawMart proudly supports thousands of families by
+            providing reliable services, trusted products, and a platform built
+            on care, compassion, and innovation. Together, we are creating a
+            better, safer future for pets and the people who love them. 🐾
           </p>
         </div>
       </section>
-      <section className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
-        <StatCard
-          number="20,000+"
-          label="Happy Customers"
-          delay="delay-[0ms]"
-        />
-        <StatCard
-          number="97%"
-          label="Product Satisfaction"
-          delay="delay-[0ms]"
-        />
-        <StatCard number="90%" label="Repeat Buyers" delay="delay-[400ms]" />
+
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="mb-8">
+          <h2 className="mt-8 text-2xl font-semibold text-gray-800">
+            Our Achievements
+          </h2>
+          <div className="w-20 h-1 mt-2 bg-linear-to-r from-indigo-500 to-purple-500 rounded-full" />
+        </div>
+        <div className="grid gap-8 text-center sm:grid-cols-2 md:grid-cols-3">
+          <StatCard number="20K+" label="Happy Customers" delay="delay-[0ms]" />
+          <StatCard
+            number="97%"
+            label="Product Satisfaction"
+            delay="delay-[0ms]"
+          />
+          <StatCard number="90%" label="Repeat Buyers" delay="delay-[0ms]" />
+        </div>
       </section>
+
       <section className="bg-black rounded-md text-white py-12 animate-fadeUpSlow">
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <h3 className="text-2xl font-bold">Stay Updated with PawMart 🐕</h3>

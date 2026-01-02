@@ -20,8 +20,8 @@ care products.</p>
       <nav>
         <div className="grid grid-flow-col gap-4">
           <Link to='/'>Home</Link>   
-          <Link to=''>Contact</Link>   
-          <Link to=''>Terms</Link>   
+          <Link to='/about'>About</Link>   
+          <Link to='/petsSupplies'>Get Started</Link>   
         </div>
       </nav>
     </footer>

@@ -4,8 +4,13 @@ import logo from "../assets/logo.png";
 import useAuth from "../Hooks/UseAuth";
 import { Bounce, toast } from "react-toastify";
 import { IoMdHome } from "react-icons/io";
-import { MdPets } from "react-icons/md";
-
+import {
+  MdPets,
+  MdPlaylistAddCheckCircle,
+  MdPlaylistAddCircle,
+} from "react-icons/md";
+import { FaCartShopping } from "react-icons/fa6";
+import { PiBookOpenTextFill } from "react-icons/pi";
 const Navbar = () => {
   const { users, logOut } = useAuth();
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -60,27 +65,27 @@ const Navbar = () => {
         className=" p-1 text-lg font-semibold rounded-md flex items-center gap-0.5"
         to="/about"
       >
-        About
+        <PiBookOpenTextFill /> About
       </NavLink>
       {users && (
         <>
           <NavLink
-            className=" p-1 text-lg font-semibold rounded-md"
+            className=" p-1 text-lg font-semibold rounded-md flex items-center gap-0.5"
             to="/addListing"
           >
-            Add Listing
+            <MdPlaylistAddCircle /> Add Listing
           </NavLink>
           <NavLink
-            className=" p-1 text-lg font-semibold rounded-md"
+            className=" p-1 text-lg font-semibold rounded-md flex items-center gap-0.5"
             to="/myListings"
           >
-            My Listings
+            <MdPlaylistAddCheckCircle /> My Listings
           </NavLink>
           <NavLink
-            className=" p-1 text-lg font-semibold rounded-md"
+            className=" p-1 text-lg font-semibold rounded-md flex items-center gap-0.5"
             to="/myOrders"
           >
-            My Orders
+            <FaCartShopping /> My Orders
           </NavLink>
         </>
       )}
@@ -146,49 +151,12 @@ const Navbar = () => {
               <li>
                 <p>{users.displayName}</p>
               </li>
-              <li>
-                <p>Theme</p>
-              </li>
-              <label className="toggle text-base-content">
-                <input
-                  onChange={(e) => handleTheme(e.target.checked)}
-                  type="checkbox"
-                />
-                <svg
-                  aria-label="enabled"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <g
-                    strokeLinejoin="round"
-                    strokeLinecap="round"
-                    strokeWidth="4"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path d="M20 6 9 17l-5-5"></path>
-                  </g>
-                </svg>
-                <svg
-                  aria-label="disabled"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M18 6 6 18" />
-                  <path d="m6 6 12 12" />
-                </svg>
-              </label>
             </ul>
           </div>
         ) : (
           <>
             <NavLink
-              className="px-1 sm:px-0 sm:p-1 sm:text-lg font-semibold rounded-md"
+              className="px-1 sm:px-0.5 sm:p-1 sm:text-lg font-semibold rounded-md"
               to="/logIn"
             >
               Log In
@@ -201,6 +169,42 @@ const Navbar = () => {
             </NavLink>
           </>
         )}
+        <label className="relative inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            className="sr-only peer"
+            onChange={(e) => handleTheme(e.target.checked)}
+          />
+
+          <div
+            className="w-10 h-5 bg-gray-300 rounded-full
+               peer-checked:bg-blue-600 dark:bg-gray-700
+               transition-colors duration-300"
+          ></div>
+
+          <div
+            className="absolute left-0.5 top-0.5 w-4 h-4 bg-white rounded-full
+               flex items-center justify-center
+               transform transition-transform duration-300
+               peer-checked:translate-x-5"
+          >
+            <svg
+              className="w-2.5 h-2.5 text-yellow-500 peer-checked:hidden"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="4" />
+            </svg>
+
+            <svg
+              className="w-2.5 h-2.5 text-gray-800 hidden peer-checked:block"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z" />
+            </svg>
+          </div>
+        </label>
       </div>
     </div>
   );

@@ -8,16 +8,20 @@ const BrandSlider = () => {
     { name: "Zoi Cat", img: "https://i.ibb.co.com/4ZX8qm72/Zoi-Cat.jpg" },
     { name: "Felix", img: "https://i.ibb.co.com/ZR1M4hFk/Felix.webp" },
     { name: "ProDiet", img: "https://i.ibb.co.com/VpjwHvz0/Pro-Diet.png" },
-    { name: "Kitchen Flavor", img: "https://i.ibb.co.com/7d1DV1SH/Kitchen-Flavor.png" },
+    {
+      name: "Kitchen Flavor",
+      img: "https://i.ibb.co.com/7d1DV1SH/Kitchen-Flavor.png",
+    },
     { name: "Wanpy", img: "https://i.ibb.co.com/vxd2X8cf/Wanpy.webp" },
     { name: "PawPaw", img: "https://i.ibb.co.com/357FNY0F/Paw-Paw.webp" },
     { name: "CIAO", img: "https://i.ibb.co.com/hFXn9vF0/CIAO.png" },
   ];
   return (
     <div className="py-10">
-      <h2 className="text-3xl font-bold mb-6 text-center">
+      <h2 className="mt-12 text-2xl font-semibold text-gray-800">
         Featured <span className="text-purple-600">Brands</span>
       </h2>
+      <div className="w-20 h-1 mt-2 bg-linear-to-r from-indigo-500 to-purple-500 rounded-full mb-2" />
 
       <Swiper
         slidesPerView={5}
