@@ -122,10 +122,10 @@ const Navbar = () => {
         </div>
         <Link
           to="/"
-          className="flex items-center  font-medium cursor-pointer text-xl"
+          className="hidden md:block cursor-pointer"
         >
-          <img className="w-20 rounded-full" src={logo} alt="" />
-          <span className="hidden sm:block"> PawMart</span>
+          <img className="w-40 h-12" src={logo} alt="" />
+         
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
